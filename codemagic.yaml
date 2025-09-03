@@ -1,18 +1,38 @@
 workflows:
-  android-workflow:
-    name: Android Build Only
+  couplelink-android:
+    name: CoupleLink Android Build
     max_build_duration: 60
     environment:
       flutter: stable
       xcode: latest
+      java: 17
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+        - build
     scripts:
-      - name: Install dependencies
+      - name: Get Flutter packages
         script: flutter pub get
       - name: Build APK
         script: flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
-    publishing:
-      email:
-        recipients:
-          - lohithsaidesiboyina@gmail.com
+
+  couplelink-ios:
+    name: CoupleLink iOS Build
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+        - build
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      - name: Build iOS
+        script: flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/ipa
