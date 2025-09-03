@@ -17,9 +17,7 @@ dependencies:
   firebase_messaging: ^14.0.0
   google_maps_flutter: ^2.7.0
   google_maps_flutter_heatmap:
-    git:
-      url: https://github.com/tobrun/flutter_heatmap.git
-      ref: null-safety   # ✅ this fork supports Dart null-safety
+    path: ./google_maps_flutter_heatmap   # ✅ local version (no Codemagic issues)
   geolocator: ^9.0.2
   geocoding: ^2.1.1
   permission_handler: ^11.3.1
@@ -47,3 +45,4 @@ flutter:
     - assets/icon/
     - assets/images/
     - assets/fonts/
+
