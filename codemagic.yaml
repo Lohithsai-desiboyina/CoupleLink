@@ -1,14 +1,18 @@
 workflows:
-  build-apk:
-    name: Build APK
+  android-workflow:
+    name: Android Build Only
+    max_build_duration: 60
     environment:
       flutter: stable
+      xcode: latest
     scripts:
-      - name: get packages
+      - name: Install dependencies
         script: flutter pub get
-      - name: create platforms
-        script: flutter create .
-      - name: build apk debug
-        script: flutter build apk --debug
+      - name: Build APK
+        script: flutter build apk --release
     artifacts:
-      - build/app/outputs/flutter-apk/app-debug.apk
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - lohithsaidesiboyina@gmail.com
