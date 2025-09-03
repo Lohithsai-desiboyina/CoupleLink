@@ -1,0 +1,14 @@
+workflows:
+  build-apk:
+    name: Build APK
+    environment:
+      flutter: stable
+    scripts:
+      - name: get packages
+        script: flutter pub get
+      - name: create platforms
+        script: flutter create .
+      - name: build apk debug
+        script: flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk

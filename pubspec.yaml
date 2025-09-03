@@ -1,0 +1,46 @@
+name: couplelink
+description: Full-featured CoupleLink starter (maps, chat, sos, insights)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  firebase_core: ^2.10.0
+  firebase_auth: ^4.8.0
+  cloud_firestore: ^4.8.0
+  firebase_storage: ^11.0.0
+  firebase_messaging: ^14.0.0
+  google_maps_flutter: ^2.7.0
+  google_maps_flutter_heatmap: ^0.0.8
+  geolocator: ^9.0.2
+  geocoding: ^2.1.1
+  permission_handler: ^11.3.1
+  record: ^5.0.5
+  just_audio: ^0.9.42
+  path_provider: ^2.1.4
+  flutter_local_notifications: ^17.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "assets/icon/app_icon_bg.png"
+  adaptive_icon_foreground: "assets/icon/app_icon_fg.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/
+    - assets/images/
+    - assets/fonts/

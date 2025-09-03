@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    match /pairs/{pairId} {
+      allow read: if isInPair(pairId, request.auth.uid);
+      allow write: if false;
+    }
+    match /chats/{pairId}/messages/{msgId} {
+      allow create, read: if isInPair(pairId, request.auth.uid);
+    }
+    function isInPair(pairId, uid) {
+      return exists(/databases/$(database)/documents/pairs/$(pairId)) &&
+        get(/databases/$(database)/documents/pairs/$(pairId)).data.members.hasAny([uid]);
+    }
+  }
+}
