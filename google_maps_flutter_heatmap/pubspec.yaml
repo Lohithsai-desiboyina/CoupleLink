@@ -1,0 +1,19 @@
+name: google_maps_flutter_heatmap
+description: A Google Maps plugin for Flutter that supports heatmaps.
+version: 0.2.0
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.7.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.google_maps_flutter_heatmap
+        pluginClass: GoogleMapsFlutterHeatmapPlugin
+      ios:
+        pluginClass: GoogleMapsFlutterHeatmapPlugin
