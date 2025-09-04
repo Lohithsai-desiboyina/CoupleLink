@@ -16,7 +16,6 @@ dependencies:
   firebase_storage: ^11.0.0
   firebase_messaging: ^14.0.0
   google_maps_flutter: ^2.7.0
-  google_maps_flutter_heatmap: ^0.0.8   # ✅ from pub.dev, no local folder
   geolocator: ^9.0.2
   geocoding: ^2.1.1
   permission_handler: ^11.3.1
